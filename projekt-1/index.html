@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <title>Wahadło matematyczne</title>
+        <meta charset="UTF-8" />
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="player.css" type="text/css" />
+        <script src="page.js"></script>
+        <script src="player.js"></script>
+        <script src="animation.js"></script>
+    </head>
+    <body onload="start()">
+        <header>
+            <nav>
+                <ul>
+                    <li class="active" onclick="home()" id="sp">Strona początkowa</li>
+                    <li onclick="equation()" id="ep">Wzór</li>
+                    <li onclick="period()" id="ap">Drgania
+                        <ul class="dropdown-content">
+                            <li onclick="smallAmp()" id="sa">dla małej amplitudy</li>
+                            <li onclick="bigAmp()" id="ba">dla dużych amplitud</li>
+                        </ul>
+                    </li> 
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <div class="content">
+                <h1>Wahadło matematyczne</h1>
+                <section id="start-page">
+                    <h2>Definicja</h2>
+                    <p>Wahadło matematyczne to punkt materialny poruszający się po okręgu w płaszczyźnie pionowej w jednorodnym polu grawitacyjnym.</p>
+                </section>
+                <section id="equation-page">
+                    <h2>Wzór</h2>
+                    <p>Równanie ruchu wahadła określa wzór:
+                    <span class="math display">\[\frac{d^{2}\theta (t)}{dt^{2}}+\frac {g}{l}\sin \theta (t)=0\]</span>
+                    gdzie:<br>
+                    <span class="math inline">\(\theta (t)\)</span> – kąt odchylenia wahadła od pionu w chwili <span class="math inline">\(t\)</span><br>
+                    <span class="math inline">\(g\)</span> – przyspieszenie ziemskie,<br>
+                    <span class="math inline">\(l\)</span>  – długość nici.<br></p>
+                </section>
+                <section id="amp-page">
+                    <h2>Drgania</h2>
+                    <div id="small-amp">
+                        <h3>dla małej amplitudy</h3>
+                        <p>Funkcję sinus można przybliżyć jej argumentem, gdy kąt jest odpowiednio mały
+                        (<span class="math inline">\(\sin \theta \approx \theta \)</span>), 
+                        wówczas ogólne równanie ruchu wahadła upraszcza się do postaci
+                        <span class="math display">\[\frac{d^{2}\theta (t)}{dt^{2}}+\frac {g}{l}\theta (t)=0\]</span>
+                        Powyższe równanie jest równaniem drgań harmonicznych. Rozwiązanie określa zależność kąta wahań od czasu i może być określone wzorem:
+                        <span class="math display">\[\theta (t)=\theta_0 \sin (\omega t + \varphi)\]</span>
+                        gdzie:
+                        <span class="math inline">\(\theta_0\)</span> – amplituda drgań, 
+                        <span class="math inline">\(\varphi = \sqrt {\frac{g}{l}}\)</span> – częstość kołowa drgań, 
+                        <span class="math inline">\(\varphi\)</span> – faza początkowa drgań.</p>
+                        <p>Okres drgań jest związany z częstością wzorem
+                        <span class="math inline">\(T=\frac{2\pi}{\omega}\)</span>, 
+                        a okres drgań wynosi
+                        <span class="math inline">\(T=2\pi \sqrt{\frac{l}{g}}\)</span>.
+                        Wynika stąd, że w przybliżeniu dla małych drgań wahadła okres drgań nie zależy od amplitudy, a jedynie od długości wahadła i przyspieszenia grawitacyjnego.
+                        </p>
+                    </div>
+                    <div id="big-amp">
+                        <h3>dla dużych amplitud</h3>
+                        <p>Dla dużych amplitud wahań okres drgań zależy od amplitudy i rośnie wraz z jej wzrostem.
+                        <span class="math display">\[T=4 \sqrt{\frac {g}{l}} K ( \sin \frac{\theta_0}{2})\]</span>
+                        gdzie K jest zupełną całką eliptyczną pierwszego rodzaju. <br>
+                        
+                        Jego rozwinięciem jest wzór:
+                        <span class="math display">\[T(\theta _{0})=2\pi {\sqrt {\frac {\ell }{g}}}\cdot \sum _{n=0}^{\infty }\left[\left({\frac {(2n)!}{(2^{n}\cdot n!)^{2}}}\right)^{2}\cdot \sin ^{2n}\left({\frac {\theta _{0}}{2}}\right)\right]\\=2\pi {\sqrt {\frac {\ell }{g}}}\left(1+\left({\frac {1}{2}}\right)^{2}\sin ^{2}\left({\frac {\theta _{0}}{2}}\right)+\left({\frac {1\cdot 3}{2\cdot 4}}\right)^{2}\sin ^{4}\left({\frac {\theta _{0}}{2}}\right)+\cdots \right)\]</span>
+                        
+                        Rozwijając w szereg Maclaurina:
+                        <span class="math display">\[
+                            T=2\pi {\sqrt {\frac {l}{g}}}\left(1+{\frac {1}{16}}\theta _{0}^{2}+{\frac {11}{3072}}\theta _{0}^{4}+{\frac {173}{737280}}\theta _{0}^{6}+{\frac {22931}{1321205760}}\theta _{0}^{8}+...\right)
+                        \]</span>
+                        </p>
+                    </div>
+                </section>
+                <div class ="player-btn" id="pbtn" onclick="openAudio()">
+                    <div class="player-btn-inner"><img src="play.svg" alt="play"></div>
+                    <p>Odtwarzacz</p>
+                </div>
+            </div>
+            <section id="anim-page">
+                <h2>Animacja</h2>
+                <svg width="500" height="310"
+                    xmlns="http://www.w3.org/2000/svg" version="1.1" 
+                    xmlns:xlink="http://www.w3.org/1999/xlink" >
+                    <circle id="circle" cx="250" cy="230" r="2.5"/>
+                    <line id="line" x1="250" y1="155" x2="250" y2="230" />
+                </svg>
+                <form>
+                    <div class=row>
+                        <div class="column">
+                            <p>Grawitacja (<i>m/s&#0178;</i>)</p>
+                        </div>
+                        <div class="column">
+                            <p>
+                                <input id="in_g" type="range" min="0" max="20" step="0.1" value="9.8" oninput="this.form.in_gt.value=this.value" onchange="changedValues()"/>
+                                <input id="in_gt" type="number" min="0" max="20" step="0.1" value="9.8" oninput="this.form.in_g.value=this.value" onchange="changedValues()"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class=row>
+                        <div class="column">
+                            <p>Początkowe wychylenie (<i>&#176;</i>)</p>
+                        </div>
+                        <div class="column">
+                            <p>
+                                <input id="in_angle" type="range" min="0" max="180" value="20" oninput="this.form.in_anglet.value=this.value" onchange="changedValues()"/>
+                                <input id="in_anglet" type="number" min="0" max="180" value="20" oninput="this.form.in_angle.value=this.value" onchange="changedValues()"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class=row>
+                        <div class="column">
+                            <p>Długość (<i>m</i>)</p>
+                        </div>
+                        <div class="column">
+                            <p>
+                                <input id="in_l" type="range" min="0.1" max="10" step="0.1" value="5" oninput="this.form.in_lt.value=this.value" onchange="changedValues()"/>
+                                <input id="in_lt" type="number" min="0" max="10" step="0.1" value="5" oninput="this.form.in_l.value=this.value" onchange="changedValues()"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class=row>
+                        <div class="column">
+                            <p>Opór</p>
+                        </div>
+                        <div class="column">
+                            <p>
+                                <input id="in_k" type="range" min="0" max="1" step="0.0001" value="0" oninput="this.form.in_kt.value=this.value" onchange="changedValues()"/>
+                                <input id="in_kt" type="number" min="0" max="1" step="0.0001" value="0" oninput="this.form.in_k.value=this.value" onchange="changedValues()"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class=row>
+                        <div class="column">
+                            <p>Masa (<i>kg</i>)</p>
+                        </div>
+                        <div class="column">
+                            <p>
+                                <input id="in_m" type="range" min="0.1" max="20" step="0.1" value="5" oninput="this.form.in_mt.value=this.value" onchange="changedValues()"/>
+                                <input id="in_mt" type="number" min="0" max="20" step="0.1" value="5" oninput="this.form.in_m.value=this.value" onchange="changedValues()"/>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <button class="button" onclick="startWorker()">Zacznij animację</button> 
+                    <button class="button" onclick="stopWorker()">Zakończ animację</button>
+                </div>
+                <div id="calculated-periods">
+                    Wyliczone okresy drgań: <br>
+                    za pomocą szeregu Maclaurina (pierwsze 7 wyrazów) - <span id="result_m"></span><br>
+                    przybliżenie dla małych amplitud - <span id="result_a"></span>
+                </div>
+            </section>
+            <div class="player" id="audio-player">
+                <div class="audio-content">
+                    <div class="close-btn" onclick="closeAudio()">&times;</div>
+                    <audio id="song" ontimeupdate="updateTime()" onended="endedSong('song')"></audio>
+                    <div class="row">
+                        <div class="column" style="flex: 30%;">
+                            <div id="cover">
+                                <img id="audio-cover" src="note.svg" alt="cover">
+                            </div>
+                        </div>
+                        <div class="column" style="flex: 70%;">
+                            <div class="song-info">
+                                <div id="song-title"></div>
+                                <div id="song-artist"></div>
+                                <div id="song-time">0:00 / 0:00</div>
+                            </div>
+                            <div class="row">
+                                <div style="flex: 20%;"><img id="speaker" src="speaker.svg" alt="volume" onclick="muteSong()"></div>
+                                <div style="flex: 80%;"><div id="volume-meter" onclick="setNewVolume(this,event)"><div id="volume-status"></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="song-slider" onclick="setSongPosition(this,event)"><div id="track-progress"></div></div>
+                    </div>    
+                    <div class="row" id="song-play-pause">    
+                        <img class="prev-next circle" src="previous.svg" alt="previous" onclick="playPrevious('song')">
+                        <img class="circle" id="play-pause" src="play.svg" alt="play" onclick="playPause('song')">
+                        <img class="prev-next circle" src="next.svg" alt="next" onclick="playNext('song')">
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer>
+            <p>Autor: Aleksandra Kuś<br>
+            źródła: <a href="https://pl.wikipedia.org/wiki/Wahadło">Wikipedia</a>, <a href="https://www.dl-sounds.com/">DL Sounds</a></p>
+        </footer>
+    </body>
+</html>
