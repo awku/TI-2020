@@ -1,0 +1,80 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    color: #212529;
+    font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+li{
+    float: left;
+    display: block;
+    color: #707071;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+li:hover{
+    color: #4a4a4b;
+}
+.container{
+    width: 100%;
+    top: 20%;
+    text-align: center;
+}
+.btn{
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn:hover{
+    background-color: #0b5ed7;
+}
+p{
+    margin-bottom: 0.5rem;
+}
+table{
+    width: 500px;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+th{
+    border-bottom: 1px solid #212529;
+}
+tr:not(:first-child):hover { 
+    background-color: #ececec; 
+} 
+.opt1{
+    fill:#17a2b8;
+}
+.opt2{
+    fill:#ffc107;
+}
+.opt3{
+    fill:#dc3545;
+}
+.rec{
+    stroke-width:1;
+    stroke:rgb(0,0,0);
+}
+.val{
+    color: #dc3545;
+    font-weight: bolder;
+}
