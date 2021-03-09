@@ -1,0 +1,7 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  name: ak-ti-projekt2
+  disk_quota: 512M
+  buildpack: php_buildpack
