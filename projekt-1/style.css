@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+nav ul{
+    display: inline-flex;
+    padding: 50px;
+    overflow: hidden;
+}
+nav ul li{
+    list-style: none;
+    padding: 0 20px;
+    color: #42455a;
+    cursor: pointer;
+}
+.dropdown-content{
+    padding: 0;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+  
+.dropdown-content li {
+    display: block;
+    padding: 5px;
+}
+  
+.dropdown-content li:hover {
+    background-color: #f1f1f1;
+}
+  
+#ap:hover .dropdown-content {
+    display: block;
+}
+
+#amp-page p{
+    font-size: 12px;
+}
+.active{
+    color: #19dafa;
+}
+nav li:hover{
+    color: #fd00da;
+}
+article{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    color: #42455a;
+    display: flex;
+}
+article h1{
+    font-size: 43px;
+    position: relative;
+    padding-left: 10%;
+}
+article h2{
+    font-size: 23px;
+    color: #42455ae5;
+    position: relative;
+    padding-left: 15%;
+}
+article h3{
+    font-size: 13px;
+    color: #42455ab0;
+    position: relative;
+    padding-left: 20%;
+}
+section p{
+    width: 90%;
+    font-size: 15px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: #919191;
+}
+.content{
+    flex-basis: 60%;
+    top: 25%;
+    left: 5%;
+}
+#start-page{
+    display: block;
+}
+#equation-page, #amp-page, #big-amp, #small-amp{
+    display: none;
+}
+#anim-page{
+    flex-basis: 40%;
+    margin-top: -100px;
+}
+#anim-page svg{
+    width: 100%;
+}
+.player-btn{
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    margin-left: 40px;
+    display: inline-flex;
+}
+.player-btn p{
+    margin: auto 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 12px;
+    color: #19dafa;
+    letter-spacing: 3px;
+}
+.player-btn-inner{
+    height: 50px;
+    width: 50px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(#fff, #fff), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.player-btn-inner img{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;   
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#line{
+    stroke:#fd00da;
+    stroke-width:1.5;
+}
+
+#circle{
+    stroke:#fd00da;
+    stroke-width:2;
+    fill: #fd00da;
+}
+form p{
+    font-size: 10px;
+    margin: 0;
+    letter-spacing: 2px;
+    color: #fd00da;
+    text-transform: uppercase;
+}
+form input[type=number]{
+    width: 5em;
+}
+form i{
+    font-family: Georgia;
+    text-transform: none;
+}
+form .row{
+    display: flex;
+}
+form .column {
+    flex: 50%;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align : center;
+    font-size : 0.8em;
+    color: #42455a;
+}
+footer a{
+    color: #19dafa !important;
+    text-decoration: none;
+}
+button{
+    border: none;
+    padding: 5px 10px;
+    margin: 10px 20px;
+    border-radius: 15%;
+    background-image: linear-gradient(to right, #fd00db77, #19d7f877);
+}
+button:hover{
+    background-image: linear-gradient(to right, #fd00da, #19d7f8);
+    color: #fff;
+}
+#calculated-periods{
+    font-size: 10px;
+    line-height: normal;
+    display: none;
+}

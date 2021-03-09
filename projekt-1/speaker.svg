@@ -1,0 +1,5 @@
+<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <polygon points="0,20 24,20 50,0 50,74 24,52 0,52" style="stroke:black;stroke-width:1;fill:black" />
+  <path d="M 55 15 A 20 40, 0, 0 1, 55 60" style="stroke:black; fill:none; stroke-width:4" />
+  <path d="M 65 5 A 20 40, 0, 0 1, 65 70" style="stroke:black; fill:none; stroke-width:4" />
+</svg>

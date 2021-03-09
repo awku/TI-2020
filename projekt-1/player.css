@@ -1,0 +1,100 @@
+.player {
+    height: 0px;
+    width: 400px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px 2px 0 2px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: fixed;
+    z-index: 1;
+    bottom: -1px;
+    left: 0;
+    background-image: linear-gradient(#fff, #fff), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.player .audio-content{
+    background-color: #f0f0f0;
+    display: block;
+    padding: 8px 22px;
+}
+.player .close-btn {
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 36px;
+}
+.player .close-btn:hover{
+    color: #19dafa;
+}
+#song-play-pause{
+    justify-content: center;
+    align-items: center;
+}
+.song-info{
+    text-align: center;
+}
+#play-pause{
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+#volume-meter{
+    margin-left: -20px;
+    width: 190px;
+    height: 10px;
+    background-color: black;
+}
+#volume-status{
+    height: 10px;
+    background-color: #fd00da;
+}
+#song-slider{
+    width: 380px;
+    height: 10px;
+    background-color: black;
+}
+#track-progress{
+    width: 0px;
+    height: 10px;
+    background-color: #fd00da;
+}
+.prev-next{
+    width: 30px;
+    height: auto;
+}
+.circle{
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(#fff, #fff), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;   
+}
+#cover{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0;
+}
+#audio-cover{
+    display:block;
+}
+#speaker{
+    width: 15px;
+    height: auto;
+}
+.player .column {
+    display: inline-block;
+    vertical-align: center;
+    align-items: center;
+}
+.player .row {
+    display: flex;
+    margin: 5px;
+}

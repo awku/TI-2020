@@ -1,0 +1,19 @@
+[
+    {
+        "title":"Carol of the Bells",
+        "artist":"DL Sounds",
+        "audiopath":"Carol of the Bells.mp3",
+        "coverpath":"carolofthebells.png"
+    },
+    {
+        "title":"Christmas Theme Music",
+        "artist":"DL Sounds",
+        "audiopath":"Christmas Theme Music.mp3"
+    },
+    {
+        "title":"The First Nowell",
+        "artist":"DL Sounds",
+        "audiopath":"The First Nowell.mp3",
+        "coverpath":"thefirstnowell.jpg"
+    }
+]
